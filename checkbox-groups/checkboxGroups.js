@@ -50,11 +50,18 @@ document.addEventListener( "DOMContentLoaded", function _initCheckboxGroups () {
 			}
 		},
 		cms = d.querySelectorAll( 'input.' + GROUP_PREFIX + '-master' ),
-		cm, cis, cbs, i, j, r;
+		cm, cis, cbs, i, j, r, cs, undefined;
 	d.removeEventListener( "DOMContentLoaded", _initCheckboxGroups, false );
 	for ( i = cms.length; i-- ; ) {
 		cm = cms[ i ];
-		for ( r = new RegExp( GROUP_PREFIX + '-[a-z0-9A-Z]' ), cis = d.querySelectorAll( 'input.' + cm.className.match( r ) ), cbs = geh( cm, cis ), j = cis.length; j--; ) cis[ j ].addEventListener( 'change', cbs, false );
+		cs = undefined;
+		for ( r = new RegExp( GROUP_PREFIX + '-[a-z0-9A-Z]' ), cis = d.querySelectorAll( 'input.' + cm.className.match( r ) ), cbs = geh( cm, cis ), j = cis.length; j--; ) {
+			cis[ j ].addEventListener( 'change', cbs, false );
+			if ( cs === undefined ) {
+				cs = cis[ j ].checked;
+			} else if ( cs !== -1 && cis[ j ].checked !== cs ) cs = -1;
+		}
+		cm.checked = cs === true;
+		if ( cs === -1 ) cm.classList.add( UNDEFINED_CLASS );
 	}
 }, false );
-

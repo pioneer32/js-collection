@@ -1,6 +1,6 @@
 # js-collection
 
-## Checkbox groups controller
+## Checkbox groups controller (clean JS)
 =============
 
 Just add follow line to your &lt;HEAD&gt; section:
