@@ -3,12 +3,12 @@
 ## Simple implementation of AMD (Advanced module Definition)
 =============
 
-Just add follow line to your <HEAD> section:<br/>
+Just add follow line to your &ltHEAD&gt section:<br/>
 ```html
 <script type="text/javascript" src="pathToCheckboxGroupsFile/amd.js"></script>
 ```
 
-Also you can redefine some options, in your <HEAD> section:
+Also you can redefine some options, in your &ltHEAD&gt section (or before your first define(...) using):
 ```html
 <script type="text/javascript">
     define.options( {

@@ -3,19 +3,20 @@
 ## Checkbox groups controller (native JS)
 =============
 
-Just add follow line to your &lt;HEAD&gt; section:
->&lt;script type="text/javascript" src="pathToCheckboxGroupsFile/checkboxGroups.js"&gt;&lt;/script&gt;
->
+Just add following line to your &lt;HEAD&gt; section:
+```html
+<script type="text/javascript" src="pathToCheckboxGroupsFile/checkboxGroups.js"></script>
+```
 
 Sample HTML code:
+```html
+A: <input class="chkbx-gr-a" type="checkbox" /><br/>
+B: <input class="chkbx-gr-a" type="checkbox" /><br/>
+C: <input class="chkbx-gr-a" type="checkbox" /><br/>
+D: <input class="chkbx-gr-a" type="checkbox" /><<br/>
 
->A: &lt;input class="chkbx-gr-a" type="checkbox" /&gt;&lt;br/&gt;<br/>
->B: &lt;input class="chkbx-gr-a" type="checkbox" /&gt;&lt;br/&gt;<br/>
->C: &lt;input class="chkbx-gr-a" type="checkbox" /&gt;&lt;br/&gt;<br/>
->D: &lt;input class="chkbx-gr-a" type="checkbox" /&gt;&lt;&lt;br/&gt;<br/>
->
->
->Master: &lt;input class="cm chkbx-gr-a chkbx-gr-master" type="checkbox" /&gt;&lt;br/&gt;
+Master: <input class="cm chkbx-gr-a chkbx-gr-master" type="checkbox" />
+```
 
 
 If not all of A,B,C,D is checked then master will give class "undef"
