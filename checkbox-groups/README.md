@@ -21,4 +21,4 @@ Master: <input class="cm chkbx-gr-a chkbx-gr-master" type="checkbox" />
 
 If not all of A,B,C,D is checked then master will give class "undef"
 
-Change event are forwarding, if you change master, all A,B,C,D fire event "change"
+Event "onchange" are forwarding, if you change master, all A,B,C,D fire event "onchange"
