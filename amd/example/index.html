@@ -3,12 +3,16 @@
 		<script type="application/javascript" src="../amd.js"></script>
 		<script type="text/javascript">
 			define.options( {
-				urlPrefix : "" /* modules located in same path */
+				urlPrefix : "js", /* modules located from js/*.js */
+				DEBUG : {
+					module3 : true /* enable debug mode for module 3 */
+				},
+				cacheProtection : false /* this is default option, but you can enable it and all request will be js/*.js?_=*milliseconds* */
 			} );
 		</script>
 		<script type="text/javascript">
 			document.addEventListener( "DOMContentLoaded", function () {
-				defined( [ 'module2', 'module3' ], function ( module2, module3 ) {
+				require( [ 'module2', 'module3' ], function ( module2, module3 ) {
 					/* this code will run after modules module1, module2 and module3 will be loaded */
 					console.log( module2.getModuleName() + ', ' + module3.getModuleName() );
 				} );
@@ -16,6 +20,6 @@
 		</script>
 	</head>
 	<body>
-		<p>If you see in the console "Module2, Module3 [Module1]" then everything went OK )</p>
+		<p>If you see in the console ""ModuleB1 loaded" and "Module2, Module3 [Module1]" then everything went OK )</p>
 	</body>
 </html>
